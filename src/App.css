@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  --primary-dark : #1c1f54;
+  --primary-light: #26c897;
+  --primary-background: #191923;
+  --secondary-light: #279ba1;
+  --primary-button: #298cbe;
+  --primary-purple: #5b326d;
+  --primary-red: #a72a3c;
+  --primary-text: #fff;
 }
 
 .App-logo {
@@ -35,4 +43,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.test {
+ cursor: pointer;
+ border: 0 red ;
+ align-items: center;
+ background-color: rgba(var(--primary-dark), 0.6);
+ bac
+
+  margin: 0 16px;
 }
