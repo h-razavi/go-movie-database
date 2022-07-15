@@ -25,6 +25,9 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     max-width: 1310px;
     margin: 0 auto;
+  }
+  h2, h3, h4 {
+    margin: 0;
   } 
 `
 
