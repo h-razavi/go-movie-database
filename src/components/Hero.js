@@ -9,7 +9,7 @@ import GroupWorkIcon from '@mui/icons-material/GroupWork';
 
 function Hero () {
     return (
-        <div className="hero-container">
+        <section className="hero-container">
         <div className="hero-left">
             <div className='icons'>
             <span className='icon1'><LocalMoviesIcon style={{ fontSize: 120 }} /></span>
@@ -26,7 +26,7 @@ function Hero () {
             <div className='logo-text'><span>Go!</span><br /> Movie Database</div>
             <q>All you need to know about your favorite Movies and TV in one place</q>
         </div>
-        </div>
+        </section>
     )
 }
 

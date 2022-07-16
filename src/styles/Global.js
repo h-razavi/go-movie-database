@@ -28,6 +28,10 @@ const GlobalStyles = createGlobalStyle`
   }
   h2, h3, h4 {
     margin: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
   } 
 `
 
