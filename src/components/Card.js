@@ -2,6 +2,13 @@ import poster from '../assets/img/3r4LYFuXrg3G8fepysr4xSLWnQL.jpg'
 import poster2 from '../assets/img/fVf4YHHkRfo1uuljpWBViEGmaUQ.jpg'
 import {CardStyled} from '../styles/CardStyled'
 import StarsIcon from '@mui/icons-material/Stars';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
+let style = `
+display: flex;
+justify-content
+`
 
 function Card() {
     return (
@@ -26,7 +33,7 @@ function Card() {
                 </div></a>
 
                 </div>
-            <span className='card-bottom'><StarsIcon />65%</span>
+            <span className='card-bottom'><CircularProgressbar value={66} text={'66%'} /></span>
         </CardStyled>
         </>
         

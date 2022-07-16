@@ -1,4 +1,5 @@
 .movie-container {
     padding: 60px;
-    
+    display: flex;
+    justify-content: space-evenly;
 }

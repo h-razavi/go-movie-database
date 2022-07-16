@@ -1,21 +1,15 @@
 import styled from "styled-components";
 
-function bgColor(rating) {
-    let color = ''
-    if (rating>=70) {
-        color='rgba(117, 235, 127,0.45)'
-    } else if (50<rating<70) {
-        color= 'rgba(247, 247, 100,0.45)'
-    } else {
-        color= 'rgba(232, 123, 93,0.45)'
-    }
-    return color;
-}
 
 let CardStyled = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+margin:0 16px;
+.cards{
+    display: flex;
+    justify-content: space-around;
+}
 .img-container{
     position: relative;
 }
@@ -29,7 +23,7 @@ align-items: center;
     display:flex;
     align-items: center;
     justify-content:center;
-    background-color: var(--primary-light);
+    background-color: var(--primary-dark);
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -70,6 +64,16 @@ img {
 }
 }
 
+.CircularProgressbar-trail {
+    stroke: #fff;
+  }
+  .CircularProgressbar-path {
+    stroke: var(--primary-light);
+  }
+  .CircularProgressbar-text {
+    fill: var(--primary-light);
+    font-size: 1.5rem;
+  }
 `
 
 
