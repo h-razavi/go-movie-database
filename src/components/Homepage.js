@@ -2,7 +2,8 @@ import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Search from "./Search";
 import MainPageCarousel from "./MainPageCarousel";
-import { popularMovies, latestMovies, popularTV, latesTV } from "../utils/constants/urls";
+import TVMainPageCarousel from "./TVMainPageCarousel";
+import { popularMovies, upcomingMovies, popularTV, latesTV } from "../utils/constants/urls";
 
 
 
@@ -15,9 +16,9 @@ export default function Homepage(){
       <Hero />
       <Search />
       <MainPageCarousel url={popularMovies} title="What Movies People Are Watching" />
-      <MainPageCarousel url={latestMovies} title="Just Released in Theatres" />
-      {/* <MainPageCarousel url={popularTV} title="Just Released in Theatres" />
-      <MainPageCarousel url={latesTV} title="Just Released in Theatres" /> */}
+      <MainPageCarousel url={upcomingMovies} title="Coming Up to Your Screens...Soon!" />
+      <TVMainPageCarousel url={popularTV} title="Popular on TV" />
+      <TVMainPageCarousel url={latesTV} title="Now Showing on TV" />
       </>
     )
 }

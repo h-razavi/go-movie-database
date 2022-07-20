@@ -1,5 +1,5 @@
 import "../styles/MainPageCarousel.css";
-import Card from "./Card";
+import TVCard from "./TVCard";
 import useFetch from "../utils/helpers/useFetch";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination} from 'swiper';
@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 
 
-export default function MainPageCarousel(props) {
+export default function TVMainPageCarousel(props) {
   //Fetching Data
   const { data, loading, error } = useFetch(props.url)
   let isDataAvailable = !loading && !error && !!data;
@@ -26,7 +26,7 @@ export default function MainPageCarousel(props) {
       <Swiper modules={[Navigation,Pagination]} spaceBetween={50} slidesPerView={5} navigation={true} pagination={{clickable: true,type: 'none'}} loop={true} >
       {isDataAvailable &&
         data.results.map((movie) => {
-          return <SwiperSlide> <Card title={movie.title} year={movie.release_date.slice(0,4)} overview={movie.overview} rating={movie.vote_average*10} poster={movie.poster_path}
+          return <SwiperSlide> <TVCard title={movie.name} year={movie.first_air_date.slice(0,4)} overview={movie.overview} rating={movie.vote_average*10} poster={movie.poster_path}
             genre1={movie.genre_ids[0]}
             genre2={movie.genre_ids[1]}
           /></SwiperSlide>
