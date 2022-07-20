@@ -5,7 +5,10 @@ let CardStyled = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+align-content:center;
+justify-content: flex-end;
 margin:0 16px;
+width: 250px;
 .cards{
     display: flex;
     justify-content: space-around;
@@ -15,7 +18,9 @@ margin:0 16px;
 }
 .card-title{
     display:inline-block;
+
     padding: 6px;
+    text-align: center;
     background-color:var(--primary-purple);
     border-radius: 6px 6px 0 0;
 }
