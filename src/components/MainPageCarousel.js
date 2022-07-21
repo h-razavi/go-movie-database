@@ -23,7 +23,16 @@ export default function MainPageCarousel(props) {
       <div className="dashes"><div className="dash dash1"></div><div className="dash dash2"></div><div className="dash dash3"></div><div className="dash dash4"></div></div>
       <h3>{props.title}</h3>
       <section className="movie-container">
-      <Swiper modules={[Navigation,Pagination]} spaceBetween={50} slidesPerView={5} navigation={true} pagination={{clickable: true,type: 'none'}} loop={true} >
+      <Swiper modules={[Navigation,Pagination]} spaceBetween={50} slidesPerView={5} navigation={true} pagination={{clickable: true,type: 'none'}} loop={true}   
+      breakpoints={{390: {
+      width: 390,
+      slidesPerView: 1,
+    },
+    768: {
+      width: 768,
+      slidesPerView: 2,
+    },
+  }}>
       {isDataAvailable &&
         data.results.map((movie) => {
           return <SwiperSlide> <Card title={movie.title} year={movie.release_date.slice(0,4)} overview={movie.overview} rating={movie.vote_average*10} poster={movie.poster_path}

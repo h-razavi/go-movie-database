@@ -10,7 +10,7 @@ function TVCard(props) {
     return (
         <>
         <CardStyled>
-            <span className='card-title'>{props.name} {props.year}</span>
+            <span className='card-title'> {props.name} {props.year}</span>
            <div className='img-container'> <a href='#'><img src={posterBasePath+props.poster} height='300px' width='200px'/><div className='card-info'>
                 <h4>Overview</h4>
                 <p>{props.overview}</p>                

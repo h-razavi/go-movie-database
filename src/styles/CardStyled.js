@@ -18,7 +18,7 @@ width: 250px;
 }
 .card-title{
     display:inline-block;
-
+    max-width:200px;
     padding: 6px;
     text-align: center;
     background-color:var(--primary-purple);
