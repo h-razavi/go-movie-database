@@ -4,7 +4,9 @@ import Search from "./Search";
 import MainPageCarousel from "./MainPageCarousel";
 import TVMainPageCarousel from "./TVMainPageCarousel";
 import NewsSection from "./NewsSection";
+import Footer from "./Footer";
 import { popularMovies, upcomingMovies, popularTV, latesTV } from "../utils/constants/urls";
+
 
 
 
@@ -21,6 +23,7 @@ export default function Homepage(){
       <TVMainPageCarousel url={popularTV} title="Popular on TV" />
       <TVMainPageCarousel url={latesTV} title="Now Showing on TV" />
       <NewsSection />
+      <Footer />
       </>
     )
 }

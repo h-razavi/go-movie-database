@@ -8,7 +8,7 @@ export default function Navbar (){
         <>
         <NavbarStyled>
             <div className="nav-left">
-            <img src={logo} height='64px' alt="logo"/>
+            <a href="/"><img src={logo} height='64px' alt="logo"/></a>
             <nav>
             <NavItem>Movies</NavItem>
             <NavItem>TV</NavItem>
