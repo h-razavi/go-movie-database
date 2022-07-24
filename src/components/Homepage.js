@@ -5,6 +5,8 @@ import MainPageCarousel from "./MainPageCarousel";
 import TVMainPageCarousel from "./TVMainPageCarousel";
 import NewsSection from "./NewsSection";
 import Footer from "./Footer";
+import MovieDetails from './MovieDetails'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { popularMovies, upcomingMovies, popularTV, latesTV } from "../utils/constants/urls";
 
 
