@@ -8,8 +8,9 @@ import Box from '@mui/material/Box';
 import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import RecommendIcon from '@mui/icons-material/Recommend';
-import CastInfo from './CastInfo';
-import Card from './Card';
+import Cast from './Cast';
+import Crew from './Crew';
+import Recommendations from './Recommendations'
 
 let style = {
   display: 'flex',
@@ -20,6 +21,7 @@ let style = {
 
 
 function TabPanel(props) {
+
     const { children, value, index, ...other } = props;
   
     return (
@@ -52,7 +54,7 @@ function TabPanel(props) {
     };
   }
   
-  export default function MovieInfo() {
+  export default function MovieInfo(props) {
     const [value, setValue] = React.useState(0);
   
     const handleChange = (event, newValue) => {
@@ -77,31 +79,17 @@ function TabPanel(props) {
         </Tabs>
         <TabPanel value={value} index={0}>
           <div style={style}>
-          <CastInfo />
-          <CastInfo />
-          <CastInfo />
-          <CastInfo />
-          <CastInfo />
-          <CastInfo />
-          <CastInfo />
-          <CastInfo />
+            <Cast id={props.id} />
           </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
         <div style={style}>
-        <CastInfo />
-        <CastInfo />
-        <CastInfo />
-        <CastInfo />          
-        <CastInfo />
+          <Crew id={props.id} />
         </div>
         </TabPanel>
         <TabPanel value={value} index={2}>
           <div style={style}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Recommendations id={props.id} />
           </div>
         </TabPanel>
       </Box>

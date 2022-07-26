@@ -5,6 +5,7 @@ const upcomingMovies = `https://api.themoviedb.org/3/movie/upcoming?api_key=${ap
 const popularTV = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`
 const latesTV = `https://api.themoviedb.org/3/tv/on_the_air?api_key=${apiKey}`
 const Genres = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`
+// const movieDetails = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
 
 
 

@@ -2,6 +2,7 @@ import {CardStyled} from '../styles/CardStyled'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Genre from './Genre';
+import {Link} from 'react-router-dom'
 
 
 

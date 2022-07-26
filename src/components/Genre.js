@@ -9,13 +9,7 @@ function Genre(props){
     if (loading) return console.log('loading');
     if (error) return console.log(error);
 
-    function getName(arr, id) {
-        arr.forEach((obj) => {
-          if (id === obj.id) {
-            return obj.name;
-          }
-        });
-      }
+  
     return (
         <>
       {isDataAvailable &&

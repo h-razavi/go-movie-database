@@ -9,7 +9,7 @@ mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
 .top-section{
     position: relative;
     left: 15%;
-    top:-150px;
+    top:-450px;
     display: flex;
 }
 
@@ -25,6 +25,15 @@ mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
 
 .top-info h2{
     font-size: 4rem;
+    max-width: 80%;
+}
+
+.genres a{
+    margin-right: 16px;
+    color:var(--primary-button)
+}
+.genres a::before{
+    content: '◉'
 }
 
 .tagline{
@@ -50,8 +59,10 @@ mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
 
 .overview p{
     color: rgba(255,255,255,0.45);
+    max-width: 800px;
 }
 
 .info-section{
     margin-left: 30%;
+    margin-top: -250px;
 }

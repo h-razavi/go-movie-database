@@ -2,6 +2,7 @@ import {CardStyled} from '../styles/CardStyled'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Genre from './Genre';
+import {Link} from 'react-router-dom'
 
 
 
@@ -11,13 +12,13 @@ function Card(props) {
         <>
         <CardStyled>
             <span className='card-title'>{props.title} {props.year}</span>
-           <div className='img-container'> <a href='#'><img src={posterBasePath+props.poster} height='300px' width='200px'/><div className='card-info'>
+            <Link to={`/movies/${props.id}`}><div className='img-container'> <img src={posterBasePath+props.poster} height='300px' width='200px'/><div className='card-info'>
                 <h4>Overview</h4>
                 <p>{props.overview}</p>                
                 <div className='genres'> <Genre id={props.genre1} /> <Genre id={props.genre2} />  </div>
-                </div></a>
-
                 </div>
+
+                </div></Link>
             <span className='card-bottom'><CircularProgressbar value={props.rating} text={props.rating+'%'} /></span>
         </CardStyled>
         {/* <CardStyled>

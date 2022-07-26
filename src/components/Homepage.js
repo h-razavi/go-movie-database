@@ -17,7 +17,6 @@ export default function Homepage(){
 
     return (
         <>
-      <Navbar /> 
       <Hero />
       <Search />
       <MainPageCarousel url={popularMovies} title="What Movies People Are Watching" />
@@ -25,7 +24,6 @@ export default function Homepage(){
       <TVMainPageCarousel url={popularTV} title="Popular on TV" />
       <TVMainPageCarousel url={latesTV} title="Now Showing on TV" />
       <NewsSection />
-      <Footer />
       </>
     )
 }

@@ -38,6 +38,7 @@ export default function MainPageCarousel(props) {
           return <SwiperSlide> <Card title={movie.title} year={movie.release_date.slice(0,4)} overview={movie.overview} rating={movie.vote_average*10} poster={movie.poster_path}
             genre1={movie.genre_ids[0]}
             genre2={movie.genre_ids[1]}
+            id={movie.id}
           /></SwiperSlide>
         })}
         </Swiper>
