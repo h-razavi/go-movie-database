@@ -54,7 +54,7 @@ function TabPanel(props) {
     };
   }
   
-  export default function MovieInfo(props) {
+  export default function TVInfo(props) {
     const [value, setValue] = React.useState(0);
   
     const handleChange = (event, newValue) => {
@@ -79,17 +79,17 @@ function TabPanel(props) {
         </Tabs>
         <TabPanel value={value} index={0}>
           <div style={style}>
-            <Cast id={props.id} category='movie' />
+            <Cast id='1399' category='tv' />
           </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
         <div style={style}>
-          <Crew id={props.id} category='movie' />
+          <Crew id='1399' category='tv' />
         </div>
         </TabPanel>
         <TabPanel value={value} index={2}>
           <div style={style}>
-          <Recommendations id={props.id} category='movie' />
+          <Recommendations id='1399' category='tv' />
           </div>
         </TabPanel>
       </Box>

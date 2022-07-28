@@ -12,7 +12,7 @@
 .cast-description{
     padding: 18px;
     max-width: 200px;
-    background-color: rgba(255,255,0255,0.25);
+    background-color: var(--card-background);
     border-radius: 0 8px 8px 0;
 }
 
@@ -22,5 +22,5 @@
 }
 
 .cast-role{
-    color: #bbb;
+    color: var(--secondary-text);
 }

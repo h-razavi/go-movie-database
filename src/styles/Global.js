@@ -17,7 +17,10 @@ const GlobalStyles = createGlobalStyle`
     --primary-button: #298cbe;
     --primary-purple: #5b326d;
     --primary-red: #a72a3c;
+    --primary-link: #7bb0e8;
     --primary-text: #fff;
+    --card-background:rgba(255,255,0255,0.25);
+    --secondary-text:rgba(255,255,255,0.45);
     background-color: var(--primary-background);
     color: var(--primary-text);
   }

@@ -30,14 +30,14 @@ mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
 
 .genres a{
     margin-right: 16px;
-    color:var(--primary-button)
+    color:var(--primary-link)
 }
 .genres a::before{
     content: '◉'
 }
 
 .tagline{
-    color: rgba(255,255,255,0.45);
+    color: var(--secondary-text);
     font-size: 1.2rem;
 }
 
@@ -58,7 +58,7 @@ mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
 }
 
 .overview p{
-    color: rgba(255,255,255,0.45);
+    color: var(--secondary-text);
     max-width: 800px;
 }
 

@@ -7,6 +7,7 @@ import Genre from './Genre'
 import convertTime from '../utils/functions/convertTime'
 import Trailer from './Trailer'
 import { apiKey } from '../utils/constants/api-key';
+import {Helmet} from "react-helmet";
 
 export default function MovieDetails(){
     let param = useParams();
@@ -23,6 +24,7 @@ export default function MovieDetails(){
 
     return(isDataAvailable &&
         <>
+        <Helmet><title>{data.title}</title></Helmet>
         <img src={bdBasePath+data.backdrop_path}  className='backdrop'/>
         <section className='top-section'>
         <img src={posterBasePath+data.poster_path} className='poster' />
@@ -45,6 +47,4 @@ export default function MovieDetails(){
         </section>
         </>
     )
-
-    //<Genre id={data.genres[0].id}/> &#9679; <Genre id={data.genres[1].id}/> &#9679; <Genre id={data.genres[2].id}/>
 }
