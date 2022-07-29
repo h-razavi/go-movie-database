@@ -10,9 +10,11 @@ import Trailer from "./Trailer";
 import { apiKey } from "../utils/constants/api-key";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {Helmet} from "react-helmet";
+import Season from "./Season";
 
 export default function TVDetails() {
-  let url = `https://api.themoviedb.org/3/tv/1399?api_key=${apiKey}&language=en-US`;
+  let param = useParams();
+  let url = `https://api.themoviedb.org/3/tv/${param.id}?api_key=${apiKey}&language=en-US`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
@@ -22,11 +24,12 @@ export default function TVDetails() {
   let posterBasePath = "http://image.tmdb.org/t/p/w342";
   let bdBasePath = "http://image.tmdb.org/t/p/original";
   let logoBasePath = "https://image.tmdb.org/t/p/w45";
+  let n=1
 
   return (
     isDataAvailable && (
       <>
-      <Helmet><title>{data.title}</title></Helmet>
+      <Helmet><title>{data.original_name}</title></Helmet>
         <img src={bdBasePath + data.backdrop_path} className="backdrop" />
         <section className="top-section">
           <img src={posterBasePath + data.poster_path} className="poster" />
@@ -41,7 +44,6 @@ export default function TVDetails() {
             </div>
             <div className="tagline">"{data.tagline}"</div>
             <div className="additional-info">
-              {" "}
               <a href={data.homepage}>
                 <img
                   src={logoBasePath + data.networks[0].logo_path}
@@ -64,11 +66,11 @@ export default function TVDetails() {
               <h4>Overview</h4>
               <p>{data.overview}</p>
             </div>
-            <button className="seasons-link">Seasons and Episodes Details<ArrowForwardIosIcon /></button>
+            <div className='seasons-buttons'><Season num={data.number_of_seasons} id={param.id} /></div>
           </div>
         </section>
         <section className='info-section'>
-           <TVInfo id='1399' /> 
+           <TVInfo id={param.id} /> 
         </section>
       </>
     )

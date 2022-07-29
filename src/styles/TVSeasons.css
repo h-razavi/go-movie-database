@@ -53,3 +53,10 @@
 .episode-left span{
     color: var(--secondary-text) ;
 }
+
+.seasons-buttons{
+    display: flex;
+    max-width: 75%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}

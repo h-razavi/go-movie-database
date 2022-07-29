@@ -14,25 +14,3 @@
     margin-right: 24px;
 }
 
-.seasons-link{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 56px;
-    padding: 12px;
-    width: 100%;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary-text);
-    background-color: rgba(56, 56, 88, 0.45);
-    border: 1px solid #ccc;
-    border-radius: 16px;
-    cursor: pointer;
-
-}
-
-.seasons-link:hover{
-    background-color:rgba(56, 56, 88, 0.25);
-    color: var(--primary-link);
-    transition: all ease-in-out 0.2s;
-}

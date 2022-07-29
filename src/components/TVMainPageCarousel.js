@@ -21,7 +21,7 @@ export default function TVMainPageCarousel(props) {
   return (
       <div>
       <div className="dashes"><div className="dash dash1"></div><div className="dash dash2"></div><div className="dash dash3"></div><div className="dash dash4"></div></div>
-      <h3>{props.title}</h3>
+      <h3 className="section-title">{props.title}</h3>
       <section className="movie-container">
       <Swiper modules={[Navigation,Pagination]} spaceBetween={50} slidesPerView={5} navigation={true} pagination={{clickable: true,type: 'none'}} loop={true} 
             breakpoints={{390: {

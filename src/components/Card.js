@@ -12,7 +12,7 @@ function Card(props) {
         <>
         <CardStyled>
             <span className='card-title'>{props.title} {props.year}</span>
-            <Link to={`/movies/${props.id}`}><div className='img-container'> <img src={posterBasePath+props.poster} height='300px' width='200px'/><div className='card-info'>
+            <Link to={`/${props.category}/${props.id}`}><div className='img-container'> <img src={posterBasePath+props.poster} height='300px' width='200px'/><div className='card-info'>
                 <h4>Overview</h4>
                 <p>{props.overview}</p>                
                 <div className='genres'> <Genre id={props.genre1} /> <Genre id={props.genre2} />  </div>

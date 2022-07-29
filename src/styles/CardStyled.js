@@ -63,6 +63,7 @@ width: 250px;
 img {
         filter: blur(2px);
         box-shadow: none;
+        
     }
 .card-info{
     display:block
