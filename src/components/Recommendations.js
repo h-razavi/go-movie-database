@@ -16,7 +16,7 @@ if (error) return console.log(error);
             return <Card title={movie.title || movie.original_name} overview={movie.overview} rating={Math.floor(movie.vote_average*10)} poster={movie.poster_path}
             genre1={movie.genre_ids[0]}
             genre2={movie.genre_ids[1]}
-            id={movie.id} category={props.category} />
+            id={movie.id} category={props.link} />
         })
         )
 }

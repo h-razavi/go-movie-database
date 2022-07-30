@@ -89,7 +89,7 @@ function TabPanel(props) {
         </TabPanel>
         <TabPanel value={value} index={2}>
           <div style={style}>
-          <Recommendations id={props.id} category='movie' />
+          <Recommendations id={props.id} category='movie' link='movies' />
           </div>
         </TabPanel>
       </Box>
