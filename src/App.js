@@ -7,6 +7,7 @@ import TVSeasons from './components/TVSeasons';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Movies from './pages/Movies'
+import TV from './pages/TV'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     <Route path='/tv/:id' element={<TVDetails />} />
     <Route path='/tv/:id/seasons/:num' element={<TVSeasons />} />
     <Route path='/movies' element={<Movies />} />
+    <Route path='/tv' element={<TV />} />
     </Routes>
     <Footer />
     </Router>

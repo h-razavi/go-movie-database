@@ -1,0 +1,57 @@
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import useFetch from "../utils/helpers/useFetch";
+import { Genres } from "../utils/constants/urls";
+import "../styles/Movies.css";
+
+export default function GenreSelector({handleGenre}) {
+  const { data, loading, error } = useFetch(Genres);
+  let isDataAvailable = !loading && !error && !!data;
+
+  if (loading) return console.log("loading");
+  if (error) return console.log(error);
+
+
+
+  return (
+    <FormControl
+      variant="standard"
+      sx={{ m: 1, minWidth: 120, color: "#fff" }}
+      classes={"selector"}
+    >
+      <InputLabel
+        id="genre"
+        sx={{
+          color: "#fff",
+        }}
+      >
+        Genre
+      </InputLabel>
+      <Select
+        label="Genre"
+        autoWidth
+        sx={{
+          color: "#fff",
+          ".MuiSelect-icon": {
+            fill: "#fff",
+          },
+          ".MuiSelect-standard": {
+            borderBottom: "2px solid #fff",
+          },
+        }}
+        onChange={handleGenre}
+      >
+        <MenuItem value={''}>Select Genre</MenuItem>
+        {isDataAvailable &&
+          data.genres.map((genre) => {
+            return (
+            <MenuItem value={genre.id} label={genre.name} >{genre.name}</MenuItem>
+            
+            )
+          })}
+      </Select>
+    </FormControl>
+  );
+}

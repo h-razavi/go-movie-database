@@ -35,7 +35,7 @@ export default function TVDetails() {
           <img src={posterBasePath + data.poster_path} className="poster" />
           <div className="top-info">
             <h2>
-              {data.original_name} ({data.first_air_date.slice(0, 4)})
+              {data.name} ({data.first_air_date.slice(0, 4)})
             </h2>
             <div className="genres">
               {data.genres.map((gen) => (

@@ -20,3 +20,26 @@
     border-radius: 24px;
     padding: 8px;   
 }
+
+.sort-by{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.sort-factor{
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+.sort-factor:active{
+    color: var(--primary-button);
+}
+
+.button-selected{
+    background-color: rgba(41, 140, 190,0.35);
+    border-radius: 12px;
+}

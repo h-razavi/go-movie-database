@@ -12,7 +12,7 @@ export default function Navbar (){
             <a href="/"><img src={logo} height='64px' alt="logo"/></a>
             <nav>
             <NavItem><Link to={'/movies'}>Movies</Link></NavItem>
-            <NavItem>TV</NavItem>
+            <NavItem><Link to={'/tv'}>TV</Link></NavItem>
             </nav>
             </div>
             <div className="nav-right">
@@ -20,8 +20,8 @@ export default function Navbar (){
             </div>
         </NavbarStyled>
         <NavMobile>
-            <div className="nav-mobile">Movies</div>
-            <div className="nav-mobile">TV</div>
+        <Link to={'/movies'}><div className="nav-mobile">Movies</div></Link>
+        <Link to={'/tv'}><div className="nav-mobile">TV</div></Link>
         </NavMobile>
 
         
