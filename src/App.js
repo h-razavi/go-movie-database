@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Movies from './pages/Movies'
 import TV from './pages/TV'
+import SearchResults from './pages/SearchResults';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
     <Route path='/tv/:id/seasons/:num' element={<TVSeasons />} />
     <Route path='/movies' element={<Movies />} />
     <Route path='/tv' element={<TV />} />
+    <Route path='/search/:query' element={<SearchResults />} />
     </Routes>
     <Footer />
     </Router>

@@ -37,6 +37,21 @@
     outline: none;
 }
 
+.search-select{
+    position: absolute;
+    background-color: #fff;
+    font-size: 1.5rem;
+    height: 64px;
+    left: 28%;
+    top: 37.3%;
+    border: none;
+    border-radius: 2rem 0 0 2rem;
+    border-right: 2px solid rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+    padding-left: 8px;
+    text-align: center;
+}
+
 @media (max-width: 480px) {
     .search {
         background-image: none;

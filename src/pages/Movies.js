@@ -74,7 +74,7 @@ today = yyyy + '-' + mm + '-' + dd;
               Release Date
             </button>
           </div>
-          <GenreSelector handleGenre={handleGenre} />
+          <GenreSelector handleGenre={handleGenre} value={genre} />
         </div>
         <div className="card-container">
           {isDataAvailable &&

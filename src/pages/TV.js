@@ -26,7 +26,7 @@ export default function TV() {
 
   today = yyyy + "-" + mm + "-" + dd;
 
-  let url = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&sort_by=${sort}&with_genres=${genre}&first_air_date.lte=${today}&page=${page}`;
+  let url = `https://api.themoviedb.org/3/discover/tv?language=en-US&sort_by=${sort}&with_genres=${genre}&first_air_date.lte=${today}&page=${page}&api_key=${apiKey}`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 

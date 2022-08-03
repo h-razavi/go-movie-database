@@ -4,16 +4,17 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import useFetch from "../utils/helpers/useFetch";
 import { Genres } from "../utils/constants/urls";
+import {useState} from 'react'
 import "../styles/Movies.css";
 
-export default function GenreSelector({handleGenre}) {
+export default function GenreSelector({handleGenre,value}) {
   const { data, loading, error } = useFetch(Genres);
   let isDataAvailable = !loading && !error && !!data;
 
   if (loading) return console.log("loading");
   if (error) return console.log(error);
 
-
+console.log(value);
 
   return (
     <FormControl
@@ -41,7 +42,11 @@ export default function GenreSelector({handleGenre}) {
             borderBottom: "2px solid #fff",
           },
         }}
-        onChange={handleGenre}
+        onChange={(e, value) => {
+        handleGenre(e)
+        }}
+        value={value}
+
       >
         <MenuItem value={''}>Select Genre</MenuItem>
         {isDataAvailable &&
