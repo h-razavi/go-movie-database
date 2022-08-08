@@ -9,6 +9,8 @@ export default function Search() {
   let handleChange = (e) => {
     setQuery(e.target.value);
   };
+
+
   return (
     <section className="search">
       <h2>Search for thousands of Movies, TV series and much more</h2>

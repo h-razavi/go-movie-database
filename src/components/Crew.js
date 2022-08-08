@@ -1,4 +1,5 @@
 import useFetch from "../utils/helpers/useFetch";
+import { Link } from "react-router-dom";
 import "../styles/CastInfo.css";
 import { apiKey } from "../utils/constants/api-key";
 import noImage from "../assets/img/no-image.jpg";
@@ -23,6 +24,7 @@ export default function Crew(props) {
         person.job === "Writer"
       ) {
         return (
+          <Link to={`/person/${person.id}`}>
           <div className="card-container">
             <img
               src={person.profile_path ?profileBasePath + person.profile_path : noImage  }
@@ -33,6 +35,7 @@ export default function Crew(props) {
               <div className="cast-role">{person.job}</div>
             </div>
           </div>
+          </Link>
         );
       }
     })

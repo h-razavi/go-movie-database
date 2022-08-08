@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Movies from './pages/Movies'
 import TV from './pages/TV'
 import SearchResults from './pages/SearchResults';
+import Person from './components/Person';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
     <Route path='/movies' element={<Movies />} />
     <Route path='/tv' element={<TV />} />
     <Route path='/search/:query' element={<SearchResults />} />
+    <Route path='/person' element={<Person />} />
+    <Route path='/person/:id' element={<Person />} />
     </Routes>
     <Footer />
     </Router>

@@ -2,6 +2,7 @@ import useFetch from "../utils/helpers/useFetch";
 import "../styles/CastInfo.css";
 import { apiKey } from "../utils/constants/api-key";
 import noImage from "../assets/img/no-image.jpg";
+import { Link } from "react-router-dom";
 
 export default function Cast(props) {
   let url = `https://api.themoviedb.org/3/${props.category}/${props.id}/credits?api_key=${apiKey}&language=en-US`;
@@ -16,6 +17,7 @@ export default function Cast(props) {
     isDataAvailable &&
     data.cast.slice(0, 8).map((person) => {
       return (
+        <Link to={`/person/${person.id}`}>
         <div className="card-container">
           <img src={person.profile_path ?profileBasePath + person.profile_path : noImage} height="150px" />
           <div className="cast-description">
@@ -23,6 +25,7 @@ export default function Cast(props) {
             <div className="cast-role">{person.character}</div>
           </div>
         </div>
+        </Link>
       );
     })
   );
