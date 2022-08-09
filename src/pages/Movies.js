@@ -3,10 +3,12 @@ import useFetch from "../utils/helpers/useFetch";
 import Search from "../components/Search";
 import { Pagination } from "@mui/material";
 import { apiKey } from "../utils/constants/api-key";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "../components/Card";
 import GenreSelector from "../components/GenreSelector";
 import { Helmet } from "react-helmet";
+import { baseURL } from "../utils/constants/urls";
+import {CircularProgress,Alert} from '@mui/material';
 
 export default function Movies() {
   let [page, setPage] = useState(1);
@@ -28,12 +30,12 @@ var yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
 
-  let url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=${sort}&with_genres=${genre}&release_date.lte=${today}&page=${page}&vote_count.gte=500`;
+  let url = `${baseURL}/discover/movie?api_key=${apiKey}&language=en-US&sort_by=${sort}&with_genres=${genre}&release_date.lte=${today}&page=${page}&vote_count.gte=500`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return console.log("loading");
-  if (error) return console.log(error);
+  if (loading) return <CircularProgress />
+  if (error) return <Alert severity="error">{error}</Alert>
 
   return (
     <>

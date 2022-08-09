@@ -4,17 +4,18 @@ import useFetch from "../utils/helpers/useFetch";
 import { Helmet } from "react-helmet";
 import { apiKey } from "../utils/constants/api-key";
 import PersonCredits from "./PersonCredits";
+import { baseURL,profileBasePath } from "../utils/constants/urls";
+import {CircularProgress,Alert} from '@mui/material';
 
 export default function Person() {
     let {id} = useParams();
-    let url = `https://api.themoviedb.org/3/person/${id}?api_key=${apiKey}&language=en-US`;
+    let url = `${baseURL}/person/${id}?api_key=${apiKey}&language=en-US`;
     const { data, loading, error } = useFetch(url);
     let isDataAvailable = !loading && !error && !!data;
 
-    if (loading) return console.log("loading");
-    if (error) return console.log(error);
+    if (loading) return <CircularProgress />
+    if (error) return <Alert severity="error">{error}</Alert>
 
-    let profileBasePath = 'https://image.tmdb.org/t/p/w185'
 
 
   return (

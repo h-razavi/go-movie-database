@@ -1,13 +1,14 @@
 import useFetch from "../utils/helpers/useFetch";
 import { Genres } from '../utils/constants/urls';
+import {CircularProgress,Alert} from '@mui/material';
 
 
 function Genre(props){
     const { data, loading, error } = useFetch(Genres)
     let isDataAvailable = !loading && !error && !!data;
 
-    if (loading) return console.log('loading');
-    if (error) return console.log(error);
+    if (loading) return <CircularProgress />
+    if (error) return <Alert severity="error">{error}</Alert>
 
   
     return (

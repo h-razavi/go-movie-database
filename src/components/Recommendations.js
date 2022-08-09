@@ -1,15 +1,17 @@
 import useFetch from "../utils/helpers/useFetch"
 import Card from "./Card";
 import { apiKey } from "../utils/constants/api-key";
+import { baseURL } from "../utils/constants/urls";
+import {CircularProgress,Alert} from '@mui/material';
 
 
 export default function Recommendations(props){
-let url = `https://api.themoviedb.org/3/${props.category}/${props.id}/recommendations?api_key=${apiKey}&language=en-US&page=1`
+let url = `${baseURL}/${props.category}/${props.id}/recommendations?api_key=${apiKey}&language=en-US&page=1`
 const { data, loading, error } = useFetch(url)
 let isDataAvailable = !loading && !error && !!data;
 
-if (loading) return console.log('loading');
-if (error) return console.log(error);
+if (loading) return <CircularProgress />
+if (error) return <Alert severity="error">{error}</Alert>
 
     return(isDataAvailable &&
         data.results.slice(0,6).map((movie)=>{

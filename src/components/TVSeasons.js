@@ -5,16 +5,19 @@ import convertTime from "../utils/functions/convertTime";
 import { useParams } from "react-router-dom";
 import noPoster from "../assets/img/no-poster.png";
 import noStill from "../assets/img/no-still.png";
+import { baseURL,posterBasePath,stillBasePath } from "../utils/constants/urls";
+import {CircularProgress,Alert} from '@mui/material';
 
 export default function TVSeasons() {
   let params = useParams();
   console.log(params.num);
-  let url = `https://api.themoviedb.org/3/tv/${params.id}/season/${params.num}?api_key=${apiKey}&language=en-US`;
+  let url = `${baseURL}/tv/${params.id}/season/${params.num}?api_key=${apiKey}&language=en-US`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  let posterBasePath = "http://image.tmdb.org/t/p/w342";
-  let stillBasePath = "http://image.tmdb.org/t/p/w300";
+  if (loading) return <CircularProgress />
+  if (error) return <Alert severity="error">{error}</Alert>
+
 
   return (
     isDataAvailable && (

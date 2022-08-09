@@ -1,13 +1,17 @@
 import useFetch from "../utils/helpers/useFetch";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import { apiKey } from "../utils/constants/api-key";
-
+import { baseURL } from "../utils/constants/urls";
+import {CircularProgress,Alert} from '@mui/material';
 
 
 export default function Trailer(props){
-let url = `https://api.themoviedb.org/3/movie/${props.id}/videos?api_key=${apiKey}&language=en-US`
+let url = `${baseURL}/movie/${props.id}/videos?api_key=${apiKey}&language=en-US`
 const { data, loading, error } = useFetch(url)
 let isDataAvailable = !loading && !error && !!data;
+
+if (loading) return <CircularProgress />
+if (error) return <Alert severity="error">{error}</Alert>
 
 
 

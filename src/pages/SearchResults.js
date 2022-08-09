@@ -9,6 +9,8 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import GenreSelector from "../components/GenreSelector";
 import { Helmet } from "react-helmet";
+import { baseURL } from "../utils/constants/urls";
+import {CircularProgress,Alert} from '@mui/material';
 
 export default function SearchResults() {
   let [page, setPage] = useState(1);
@@ -17,12 +19,12 @@ export default function SearchResults() {
   let params = useParams();
 
 
-  let url = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${params.query}&page=${page}`;
+  let url = `${baseURL}/search/multi?api_key=${apiKey}&language=en-US&query=${params.query}&page=${page}`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return console.log("loading");
-  if (error) return console.log(error);
+  if (loading) return <CircularProgress />
+  if (error) return <Alert severity="error">{error}</Alert>
 
   return (
     <>

@@ -8,20 +8,20 @@ import convertTime from "../utils/functions/convertTime";
 import Trailer from "./Trailer";
 import { apiKey } from "../utils/constants/api-key";
 import { Helmet } from "react-helmet";
+import { baseURL,bdBasePath,posterBasePath } from "../utils/constants/urls";
 import noBackdrop from '../assets/img/no-backdrop.png'
 import noPoster from '../assets/img/no-poster.png'
+import {CircularProgress,Alert} from '@mui/material';
+
 
 export default function MovieDetails() {
   let param = useParams();
-  let url = `https://api.themoviedb.org/3/movie/${param.id}?api_key=${apiKey}&language=en-US`;
+  let url = `${baseURL}/movie/${param.id}?api_key=${apiKey}&language=en-US`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return console.log("loading");
-  if (error) return console.log(error);
-
-  let posterBasePath = "http://image.tmdb.org/t/p/w342";
-  let bdBasePath = "http://image.tmdb.org/t/p/original";
+  if (loading) return <CircularProgress />
+  if (error) return <Alert severity="error">{error}</Alert>
 
   return (
     isDataAvailable && (

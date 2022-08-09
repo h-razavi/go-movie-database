@@ -1,5 +1,4 @@
 import '../styles/CastInfo.css'
-import propic from '../assets/img/bsAnEFgVm5kn8DbBZKfnlLNll89.jpg'
 
 export default function CastInfo(props){
     return(

@@ -8,23 +8,20 @@ import Genre from "./Genre";
 import convertTime from "../utils/functions/convertTime";
 import Trailer from "./Trailer";
 import { apiKey } from "../utils/constants/api-key";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {Helmet} from "react-helmet";
 import Season from "./Season";
+import { baseURL,posterBasePath,bdBasePath,logoBasePath} from "../utils/constants/urls";
+import {CircularProgress,Alert,ArrowForwardIosIcon} from '@mui/material';
 
 export default function TVDetails() {
   let param = useParams();
-  let url = `https://api.themoviedb.org/3/tv/${param.id}?api_key=${apiKey}&language=en-US`;
+  let url = `${baseURL}/tv/${param.id}?api_key=${apiKey}&language=en-US`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return console.log("loading");
-  if (error) return console.log(error);
+  if (loading) return <CircularProgress />
+  if (error) return <Alert severity="error">{error}</Alert>
 
-  let posterBasePath = "http://image.tmdb.org/t/p/w342";
-  let bdBasePath = "http://image.tmdb.org/t/p/original";
-  let logoBasePath = "https://image.tmdb.org/t/p/w45";
-  let n=1
 
   return (
     isDataAvailable && (

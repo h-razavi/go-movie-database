@@ -6,6 +6,7 @@ import { Navigation, Pagination} from 'swiper';
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
 import 'swiper/css';
+import {CircularProgress,Alert} from '@mui/material';
 
 
 export default function TVMainPageCarousel(props) {
@@ -13,9 +14,8 @@ export default function TVMainPageCarousel(props) {
   const { data, loading, error } = useFetch(props.url)
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return console.log('loading');
-  if (error) return console.log(error);
-
+  if (loading) return <CircularProgress />
+  if (error) return <Alert severity="error">{error}</Alert>
   
 
   return (

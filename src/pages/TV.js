@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import TVCard from "../components/TVCard";
 import GenreSelector from "../components/GenreSelector";
 import { Helmet } from "react-helmet";
+import { baseURL } from "../utils/constants/urls";
+import {CircularProgress,Alert} from '@mui/material';
 
 export default function TV() {
   let [page, setPage] = useState(1);
@@ -26,12 +28,12 @@ export default function TV() {
 
   today = yyyy + "-" + mm + "-" + dd;
 
-  let url = `https://api.themoviedb.org/3/discover/tv?language=en-US&sort_by=${sort}&with_genres=${genre}&first_air_date.lte=${today}&page=${page}&api_key=${apiKey}`;
+  let url = `${baseURL}/discover/tv?language=en-US&sort_by=${sort}&with_genres=${genre}&first_air_date.lte=${today}&page=${page}&api_key=${apiKey}`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return console.log("loading");
-  if (error) return console.log(error);
+  if (loading) return <CircularProgress />
+  if (error) return <Alert severity="error">{error}</Alert>
 
   return (
     <>
