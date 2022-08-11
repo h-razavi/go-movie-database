@@ -16,7 +16,6 @@ export default function Navbar (){
             </nav>
             </div>
             <div className="nav-right">
-                <img src={pfp} height="36px"/>
             </div>
         </NavbarStyled>
         <NavMobile>

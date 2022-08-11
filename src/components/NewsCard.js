@@ -2,7 +2,7 @@ import "../styles/NewsCard.css";
 import useFetch from "../utils/helpers/useFetch";
 
 let url =
-  "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=a0c951117e7d472dbf5ac4f6e41c1c5f";
+  "https://gnews.io/api/v4/top-headlines?token=f653d0939e700f61cfb38c810d1d4fa9&lang=en&topic=entertainment&country=us";
 
 export default function NewsCard() {
   const { data, loading, error } = useFetch(url);
@@ -16,7 +16,7 @@ export default function NewsCard() {
     return (
       <>
         <div className="news-card-container">
-          <img src={article.urlToImage}></img>
+          <img src={article.image}></img>
 
           <div className="description">
             <h4>
