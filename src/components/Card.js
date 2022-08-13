@@ -25,8 +25,7 @@ function Card(props) {
               <h4>Overview</h4>
               <p>{props.overview}</p>
               <div className="genres">
-                {" "}
-                <Genre id={props.genre1} /> <Genre id={props.genre2} />{" "}
+                <Genre id={props.genre1} /> <Genre id={props.genre2} />
               </div>
             </div>
           </div>

@@ -42,11 +42,13 @@
 }
 
 .episode-left{
-    width: 25%;
+    min-width: 25%;
     margin-left: 36px;
+    padding-right: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    overflow-wrap: break-word;
     border-right: 4px dotted var(--primary-background);
 }
 

@@ -18,6 +18,14 @@ export default function TVSeasons() {
   if (loading) return <CircularProgress />
   if (error) return <Alert severity="error">{error}</Alert>
 
+    //Get date
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0");
+    var yyyy = today.getFullYear();
+  
+    today = yyyy + "-" + mm + "-" + dd;
+
 
   return (
     isDataAvailable && (
@@ -61,7 +69,7 @@ export default function TVSeasons() {
                     <span>{Math.floor(episode.vote_average * 10)}%</span>
                   </div>
                 </div>
-                <p>{episode.overview}</p>
+                <p>{episode.air_date<today?episode.overview:"To Be Aired"}</p>
               </div>
             </div>
           );

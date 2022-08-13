@@ -7,7 +7,7 @@ flex-direction: column;
 align-items: center;
 align-content:center;
 justify-content: flex-end;
-margin:0 16px;
+margin:0;
 width: 250px;
 .cards{
     display: flex;
@@ -58,6 +58,8 @@ width: 250px;
     justify-content: space-between;
     padding-top: 24px;
     color:var(--primary-button);
+    overflow: hidden;
+    text-overflow: "-";
 }
 .img-container:hover{
 img {

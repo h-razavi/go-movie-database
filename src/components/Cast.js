@@ -18,7 +18,8 @@ export default function Cast(props) {
     isDataAvailable &&
     data.cast.slice(0, 8).map((person) => {
       return (
-        <Link to={`/person/${person.id}`}>
+
+          <Link to={`/person/${person.id}`}>
         <div className="card-container">
           <img src={person.profile_path ?profileBasePath + person.profile_path : noImage} height="150px" />
           <div className="cast-description">
@@ -26,7 +27,8 @@ export default function Cast(props) {
             <div className="cast-role">{person.character}</div>
           </div>
         </div>
-        </Link>
+          </Link>
+
       );
     })
   );

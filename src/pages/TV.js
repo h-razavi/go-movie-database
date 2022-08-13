@@ -28,7 +28,7 @@ export default function TV() {
 
   today = yyyy + "-" + mm + "-" + dd;
 
-  let url = `${baseURL}/discover/tv?language=en-US&sort_by=${sort}&with_genres=${genre}&first_air_date.lte=${today}&page=${page}&api_key=${apiKey}`;
+  let url = `${baseURL}/discover/tv?language=en-US&sort_by=${sort}&with_genres=${genre}&first_air_date.lte=${today}&page=${page}&api_key=${apiKey}&vote_count.gte=500`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
@@ -74,9 +74,9 @@ export default function TV() {
               Release Date
             </button>
           </div>
-          <GenreSelector handleGenre={handleGenre} />
+          <GenreSelector handleGenre={handleGenre} value={genre} />
         </div>
-        <div className="card-container">
+        <div className="cards-container">
           {isDataAvailable &&
             data.results.map((movie) => {
               return (

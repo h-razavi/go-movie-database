@@ -26,7 +26,7 @@ export default function TVDetails() {
   return (
     isDataAvailable && (
       <>
-      <Helmet><title>{data.original_name}</title></Helmet>
+      <Helmet><title>{data.name} ({data.first_air_date.slice(0, 4)})</title></Helmet>
         <img src={bdBasePath + data.backdrop_path} className="backdrop" />
         <section className="top-section">
           <img src={posterBasePath + data.poster_path} className="poster" />

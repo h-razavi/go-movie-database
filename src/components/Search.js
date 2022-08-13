@@ -2,7 +2,7 @@ import "../styles/Search.css";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 
 export default function Search() {
   let [query, setQuery] = useState("");
@@ -10,6 +10,14 @@ export default function Search() {
     setQuery(e.target.value);
   };
 
+  let navigate = useNavigate();
+
+
+  let handleSubmit = e =>{
+      e.preventDefault();
+      setQuery(e.target.value);
+      navigate(`/search/${query}`)
+  }
 
   return (
     <section className="search">
@@ -17,10 +25,7 @@ export default function Search() {
       <SearchIcon
         sx={{ position: "relative", top: "16px", fontSize: "3rem" }}
       />
-      {/* <select id='category' className='search-select'>
-                <option value={'movies'}>Movies</option>
-                <option value={'tv'}>TV</option>
-            </select> */}
+      <form onSubmit={handleSubmit}>
       <input
         type={"text"}
         placeholder="Find Your Next Watch"
@@ -28,6 +33,7 @@ export default function Search() {
         onChange={handleChange}
         value={query}
       ></input>
+      </form>
       <Link to={`/search/${query}`}> <Button
         variant="contained"
         sx={{

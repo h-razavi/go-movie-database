@@ -78,7 +78,7 @@ today = yyyy + '-' + mm + '-' + dd;
           </div>
           <GenreSelector handleGenre={handleGenre} value={genre} />
         </div>
-        <div className="card-container">
+        <div className="cards-container">
           {isDataAvailable &&
             data.results
               .map((movie) => {

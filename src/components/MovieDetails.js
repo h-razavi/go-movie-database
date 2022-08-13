@@ -27,7 +27,7 @@ export default function MovieDetails() {
     isDataAvailable && (
       <>
         <Helmet>
-          <title>{data.title}</title>
+          <title>{data.title} ({data.release_date.slice(0, 4)})</title>
         </Helmet>
         <img src={data.backdrop_path ?bdBasePath + data.backdrop_path : noBackdrop} className="backdrop" />
         <section className="top-section">
