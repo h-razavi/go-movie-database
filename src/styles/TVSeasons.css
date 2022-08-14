@@ -43,12 +43,12 @@
 
 .episode-left{
     min-width: 25%;
+    max-width: 30%;
     margin-left: 36px;
     padding-right: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    overflow-wrap: break-word;
     border-right: 4px dotted var(--primary-background);
 }
 
@@ -61,4 +61,20 @@
     max-width: 75%;
     flex-wrap: wrap;
     justify-content: flex-start;
+}
+
+.back-button{
+    font-size: 2rem;
+    color: var(--primary-text);
+    display: block;
+    margin: 36px auto;
+    padding: 8px;
+    background-color: var(--primary-button);
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+}
+.back-button:hover{
+    color: var(--secondary-text);
+    background-color: var(--primary-link);
 }

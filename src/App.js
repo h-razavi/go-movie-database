@@ -24,7 +24,9 @@ function App() {
     <Route path='/tv/:id' element={<TVDetails />} />
     <Route path='/tv/:id/seasons/:num' element={<TVSeasons />} />
     <Route path='/movies' element={<Movies />} />
+    <Route path='/movies/genre=:genre' element={<Movies />} />
     <Route path='/tv' element={<TV />} />
+    <Route path='/tv/genre=:genre' element={<TV />} />
     <Route path='/search/' element={<NullSearch />} />
     <Route path='/search/:query' element={<SearchResults />} />
     <Route path='/person' element={<Person />} />

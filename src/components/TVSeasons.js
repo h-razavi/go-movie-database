@@ -7,10 +7,10 @@ import noPoster from "../assets/img/no-poster.png";
 import noStill from "../assets/img/no-still.png";
 import { baseURL,posterBasePath,stillBasePath } from "../utils/constants/urls";
 import {CircularProgress,Alert} from '@mui/material';
+import { Link } from "react-router-dom";
 
 export default function TVSeasons() {
   let params = useParams();
-  console.log(params.num);
   let url = `${baseURL}/tv/${params.id}/season/${params.num}?api_key=${apiKey}&language=en-US`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
@@ -74,6 +74,7 @@ export default function TVSeasons() {
             </div>
           );
         })}
+        <button className="back-button"><Link to={`/tv/${params.id}`}> &#9668; Go Back </Link></button>
       </div>
     )
   );

@@ -1,5 +1,6 @@
 import "../styles/Movies.css";
 import useFetch from "../utils/helpers/useFetch";
+import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 import { Pagination } from "@mui/material";
 import { apiKey } from "../utils/constants/api-key";
@@ -17,7 +18,10 @@ export default function Movies() {
   let [sort, setSort] = useState("popularity.desc");
   let handleSort = (e, value) => setSort(e.target.value);
 
-  let [genre, setGenre] = useState("");
+  let params = useParams();
+  console.log(params.genre);
+
+  let [genre, setGenre] = useState(params.genre);
   let handleGenre = (e, value) => setGenre(e.target.value)
 
   
@@ -76,7 +80,7 @@ today = yyyy + '-' + mm + '-' + dd;
               Release Date
             </button>
           </div>
-          <GenreSelector handleGenre={handleGenre} value={genre} />
+          <GenreSelector handleGenre={handleGenre} value={genre} group='movie' />
         </div>
         <div className="cards-container">
           {isDataAvailable &&
@@ -93,6 +97,7 @@ today = yyyy + '-' + mm + '-' + dd;
                     genre2={movie.genre_ids[1]}
                     id={movie.id}
                     category="movies"
+                    group='movie'
                   />
                 );
               })}

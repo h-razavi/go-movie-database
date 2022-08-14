@@ -34,7 +34,7 @@ export default function SearchResults() {
       <Search />
       <div className="container">
         <h2 className="page-title">Here is What We Could Find</h2>
-        <div className="card-container">
+        <div className="cards-container">
           {isDataAvailable &&
             data.results
               .map((movie) => {
@@ -46,6 +46,7 @@ export default function SearchResults() {
                     poster={movie.poster_path}
                     id={movie.id}
                     category={movie.media_type==="movie"?"movies":"tv"}
+                    group={movie.media_type==="movie"?"movie":"tv"}
                   />
                 );
               })

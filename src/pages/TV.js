@@ -1,14 +1,15 @@
 import "../styles/Movies.css";
 import useFetch from "../utils/helpers/useFetch";
+import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 import { Pagination } from "@mui/material";
 import { apiKey } from "../utils/constants/api-key";
 import { useState, useEffect } from "react";
 import TVCard from "../components/TVCard";
-import GenreSelector from "../components/GenreSelector";
 import { Helmet } from "react-helmet";
 import { baseURL } from "../utils/constants/urls";
 import {CircularProgress,Alert} from '@mui/material';
+import GenreSelectorTV from "../components/GenreSelectorTV";
 
 export default function TV() {
   let [page, setPage] = useState(1);
@@ -17,7 +18,9 @@ export default function TV() {
   let [sort, setSort] = useState("popularity.desc");
   let handleSort = (e, value) => setSort(e.target.value);
 
-  let [genre, setGenre] = useState("");
+  let params = useParams();
+
+  let [genre, setGenre] = useState(params.genre);
   let handleGenre = (e, value) => setGenre(e.target.value);
 
   //Get date
@@ -74,7 +77,7 @@ export default function TV() {
               Release Date
             </button>
           </div>
-          <GenreSelector handleGenre={handleGenre} value={genre} />
+          <GenreSelectorTV handleGenre={handleGenre} value={genre} />
         </div>
         <div className="cards-container">
           {isDataAvailable &&
@@ -89,6 +92,7 @@ export default function TV() {
                   genre1={movie.genre_ids[0]}
                   genre2={movie.genre_ids[1]}
                   id={movie.id}
+                  group='tv'
                 />
               );
             })}

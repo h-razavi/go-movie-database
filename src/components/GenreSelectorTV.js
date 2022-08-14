@@ -8,14 +8,15 @@ import { apiKey } from "../utils/constants/api-key";
 import {CircularProgress,Alert} from '@mui/material';
 import "../styles/Movies.css";
 
-export default function GenreSelector({handleGenre, value}) {
-  let url = `${baseURL}/genre/movie/list?api_key=${apiKey}`
+export default function GenreSelectorTV({handleGenre, value}) {
+  let url = `${baseURL}/genre/tv/list?api_key=${apiKey}`
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
   if (loading) return <CircularProgress />
   if (error) return <Alert severity="error">{error}</Alert>
 
+console.log(value);
 
   return (
     <FormControl

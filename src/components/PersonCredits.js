@@ -19,7 +19,7 @@ export default function PersonCredits(){
            return <Card title={person.title || person.name} overview={person.overview} rating={Math.floor(person.vote_average*10)} poster={person.poster_path}
             genre1={person.genre_ids[0]}
             genre2={person.genre_ids[1]}
-            id={person.id} category='movies' />
+            id={person.id} category='movies' group={'movie'&&'tv'} />
         })
 
     )

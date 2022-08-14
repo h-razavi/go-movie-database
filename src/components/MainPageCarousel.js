@@ -40,6 +40,7 @@ export default function MainPageCarousel(props) {
             genre2={movie.genre_ids[1]}
             id={movie.id}
             category='movies'
+            group='movie'
           /></SwiperSlide>
         })}
         </Swiper>

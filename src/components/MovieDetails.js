@@ -23,6 +23,10 @@ export default function MovieDetails() {
   if (loading) return <CircularProgress />
   if (error) return <Alert severity="error">{error}</Alert>
 
+  let bgStyle={
+
+  }
+
   return (
     isDataAvailable && (
       <>
@@ -38,7 +42,7 @@ export default function MovieDetails() {
             </h2>
             <div className="genres">
               {data.genres.map((gen) => (
-                <Genre id={gen.id} />
+                <Genre id={gen.id} group='movie' />
               ))}
             </div>
             <div className="tagline">"{data.tagline}"</div>
