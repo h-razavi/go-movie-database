@@ -54,7 +54,7 @@ export default function MovieDetails() {
               <div>
                 <b>User Score</b>: {Math.floor(data.vote_average * 10)}%
               </div>
-              <Trailer id={param.id} />
+              <Trailer id={param.id} group={"movie"} />
             </div>
             <div className="overview">
               <h4>Overview</h4>

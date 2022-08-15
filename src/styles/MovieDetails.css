@@ -50,6 +50,26 @@ mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
     display: flex;
     align-items: center;
     margin-left: 36px;
+    cursor: pointer;
+}
+
+.trailer-wrapper{
+    position: absolute;
+    top: -150vh;
+    left: -100vw;
+    height: 375vh;
+    width: 200vw;
+    background-color: rgba(0, 0, 0, 0.85); 
+    z-index: 1; 
+}
+
+iframe{
+    height: 80vh;
+    aspect-ratio: 16/9;
+    position: fixed;    
+    top: 10vh;
+    left: 30vh;
+    z-index: 9999;
 }
 
 .runtime{
