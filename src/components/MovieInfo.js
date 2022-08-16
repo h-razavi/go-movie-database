@@ -16,7 +16,7 @@ let style = {
   display: 'flex',
   justifyContent: 'space-evenly',
   flexWrap: 'wrap',
-  maxWidth: '800px'
+  maxWidth: '80vw'
 }
 
 

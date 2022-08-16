@@ -8,11 +8,10 @@ import convertTime from "../utils/functions/convertTime";
 import Trailer from "./Trailer";
 import { apiKey } from "../utils/constants/api-key";
 import { Helmet } from "react-helmet";
-import { baseURL,bdBasePath,posterBasePath } from "../utils/constants/urls";
-import noBackdrop from '../assets/img/no-backdrop.png'
-import noPoster from '../assets/img/no-poster.png'
-import {CircularProgress,Alert} from '@mui/material';
-
+import { baseURL, bdBasePath, posterBasePath } from "../utils/constants/urls";
+import noBackdrop from "../assets/img/no-backdrop.png";
+import noPoster from "../assets/img/no-poster.png";
+import { CircularProgress, Alert } from "@mui/material";
 
 export default function MovieDetails() {
   let param = useParams();
@@ -20,29 +19,39 @@ export default function MovieDetails() {
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return <CircularProgress />
-  if (error) return <Alert severity="error">{error}</Alert>
+  if (loading) return <CircularProgress />;
+  if (error) return <Alert severity="error">{error}</Alert>;
 
-  let bgStyle={
-
-  }
+  let bgStyle = {};
 
   return (
     isDataAvailable && (
       <>
         <Helmet>
-          <title>{data.title} ({data.release_date.slice(0, 4)})</title>
+          <title>
+            {data.title} ({data.release_date.slice(0, 4)})
+          </title>
         </Helmet>
-        <img src={data.backdrop_path ?bdBasePath + data.backdrop_path : noBackdrop} className="backdrop" />
+        <img
+          src={
+            data.backdrop_path ? bdBasePath + data.backdrop_path : noBackdrop
+          }
+          className="backdrop"
+        />
         <section className="top-section">
-          <img src={data.poster_path ?posterBasePath + data.poster_path : noPoster} className="poster" />
+          <img
+            src={
+              data.poster_path ? posterBasePath + data.poster_path : noPoster
+            }
+            className="poster"
+          />
           <div className="top-info">
             <h2>
               {data.title} ({data.release_date.slice(0, 4)})
             </h2>
             <div className="genres">
               {data.genres.map((gen) => (
-                <Genre id={gen.id} group='movie' />
+                <Genre id={gen.id} group="movie" />
               ))}
             </div>
             <div className="tagline">"{data.tagline}"</div>

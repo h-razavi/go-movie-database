@@ -29,7 +29,7 @@ export default function Crew(props) {
           <div className="card-container">
             <img
               src={person.profile_path ?profileBasePath + person.profile_path : noImage  }
-              height="150px"
+              style={{maxHeight:"150px",width:"auto"}}
             />
             <div className="cast-description">
               <div className="cast-name">{person.name}</div>

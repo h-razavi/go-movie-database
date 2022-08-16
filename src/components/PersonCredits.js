@@ -15,7 +15,7 @@ export default function PersonCredits(){
     if (error) return <Alert severity="error">{error}</Alert>
 
     return(isDataAvailable &&
-        data.cast.slice(0,8).map(person=>{
+        data.cast.slice(0,10).map(person=>{
            return <Card title={person.title || person.name} overview={person.overview} rating={Math.floor(person.vote_average*10)} poster={person.poster_path}
             genre1={person.genre_ids[0]}
             genre2={person.genre_ids[1]}

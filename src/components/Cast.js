@@ -21,7 +21,7 @@ export default function Cast(props) {
 
           <Link to={`/person/${person.id}`}>
         <div className="card-container">
-          <img src={person.profile_path ?profileBasePath + person.profile_path : noImage} height="150px" />
+          <img src={person.profile_path ?profileBasePath + person.profile_path : noImage} style={{maxHeight:"150px",width:"auto"}} />
           <div className="cast-description">
             <div className="cast-name">{person.name}</div>
             <div className="cast-role">{person.character}</div>

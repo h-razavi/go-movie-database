@@ -45,7 +45,7 @@ let NavMobile = styled.div `
         display: none;
     }
     .nav-mobile {
-        width:50%;
+        width:100%;
         background-color: var(--primary-dark-faded);
         height: 64px;
         font-family: 'Raleway', sans-serif;

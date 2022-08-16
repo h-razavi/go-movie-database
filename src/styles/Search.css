@@ -17,6 +17,10 @@
     top: 60px;
 }
 
+.search form {
+    display: inline;
+}
+
 .search input {
     width: 50%;
     margin-top: 36px;
