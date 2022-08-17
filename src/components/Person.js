@@ -24,7 +24,7 @@ export default function Person() {
     <Helmet><title>{data.name}</title></Helmet>
     <div className="container">
       <div className="profile">
-        <img src={profileBasePath+data.profile_path} style={{minWidth:'200px'}}/>
+        <img src={profileBasePath+data.profile_path}/>
         <div className="person-info">
           <h2 className="person-name">{data.name}</h2>
           <div>

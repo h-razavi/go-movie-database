@@ -25,11 +25,11 @@ export default function MainPageCarousel(props) {
       <section className="movie-container">
       <Swiper modules={[Navigation,Pagination]} spaceBetween={0} slidesPerView={5} navigation={true} pagination={{clickable: true,type: 'none'}} loop={true}   
       breakpoints={{390: {
-      width: 390,
+      width: 300,
       slidesPerView: 1,
     },
     768: {
-      width: 768,
+      width: 690,
       slidesPerView: 2,
     },
   }}>

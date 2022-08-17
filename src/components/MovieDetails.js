@@ -22,8 +22,6 @@ export default function MovieDetails() {
   if (loading) return <CircularProgress />;
   if (error) return <Alert severity="error">{error}</Alert>;
 
-  let bgStyle = {};
-
   return (
     isDataAvailable && (
       <>
@@ -37,6 +35,7 @@ export default function MovieDetails() {
             data.backdrop_path ? bdBasePath + data.backdrop_path : noBackdrop
           }
           className="backdrop"
+          alt="backrop"
         />
         <section className="top-section">
           <img
@@ -44,6 +43,7 @@ export default function MovieDetails() {
               data.poster_path ? posterBasePath + data.poster_path : noPoster
             }
             className="poster"
+            alt="poster"
           />
           <div className="top-info">
             <h2>

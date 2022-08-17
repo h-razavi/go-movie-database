@@ -30,6 +30,7 @@ export default function Crew(props) {
             <img
               src={person.profile_path ?profileBasePath + person.profile_path : noImage  }
               style={{maxHeight:"150px",width:"auto"}}
+              alt="person profile"
             />
             <div className="cast-description">
               <div className="cast-name">{person.name}</div>
