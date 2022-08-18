@@ -54,7 +54,7 @@ console.log(value);
         {isDataAvailable &&
           data.genres.map((genre) => {
             return (
-            <MenuItem value={genre.id} label={genre.name} >{genre.name}</MenuItem>
+            <MenuItem value={genre.id} label={genre.name} key={genre.id} >{genre.name}</MenuItem>
             
             )
           })}

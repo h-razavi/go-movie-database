@@ -19,7 +19,7 @@ export default function Cast(props) {
     data.cast.slice(0, 8).map((person) => {
       return (
 
-          <Link to={`/person/${person.id}`}>
+          <Link to={`/person/${person.id}`} key={person.id}>
         <div className="card-container">
           <img src={person.profile_path ?profileBasePath + person.profile_path : noImage} style={{maxHeight:"150px",width:"auto"}} alt="person profile" />
           <div className="cast-description">

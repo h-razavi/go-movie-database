@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 import { Pagination } from "@mui/material";
 import { apiKey } from "../utils/constants/api-key";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TVCard from "../components/TVCard";
 import { Helmet } from "react-helmet";
 import { baseURL } from "../utils/constants/urls";
@@ -93,6 +93,7 @@ export default function TV() {
                   genre2={movie.genre_ids[1]}
                   id={movie.id}
                   group='tv'
+                  key={movie.id}
                 />
               );
             })}

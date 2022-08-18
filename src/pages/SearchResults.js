@@ -47,6 +47,7 @@ export default function SearchResults() {
                     id={movie.id}
                     category={movie.media_type==="movie"?"movies":"tv"}
                     group={movie.media_type==="movie"?"movie":"tv"}
+                    key={movie.id}
                   />
                 );
               })

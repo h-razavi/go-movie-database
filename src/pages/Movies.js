@@ -19,7 +19,6 @@ export default function Movies() {
   let handleSort = (e, value) => setSort(e.target.value);
 
   let params = useParams();
-  console.log(params.genre);
 
   let [genre, setGenre] = useState(params.genre);
   let handleGenre = (e, value) => setGenre(e.target.value)
@@ -98,6 +97,7 @@ today = yyyy + '-' + mm + '-' + dd;
                     id={movie.id}
                     category="movies"
                     group='movie'
+                    key={movie.id}
                   />
                 );
               })}

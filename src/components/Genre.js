@@ -19,7 +19,7 @@ function Genre(props){
       {isDataAvailable &&
         data.genres.map((genre) => {
             if (genre.id===props.id){
-                return <Link to={`/${props.group==="movie"?"movies":"tv"}/genre=${genre.id}`}>{genre.name}</Link> 
+                return <Link to={`/${props.group==="movie"?"movies":"tv"}/genre=${genre.id}`} key={genre.id}>{genre.name}</Link> 
             }         
         })}
 

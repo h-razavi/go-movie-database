@@ -11,7 +11,7 @@ import { apiKey } from "../utils/constants/api-key";
 import {Helmet} from "react-helmet";
 import Season from "./Season";
 import { baseURL,posterBasePath,bdBasePath,logoBasePath} from "../utils/constants/urls";
-import {CircularProgress,Alert,ArrowForwardIosIcon} from '@mui/material';
+import {CircularProgress,Alert} from '@mui/material';
 
 export default function TVDetails() {
   let param = useParams();
@@ -27,16 +27,16 @@ export default function TVDetails() {
     isDataAvailable && (
       <>
       <Helmet><title>{data.name} ({data.first_air_date.slice(0, 4)})</title></Helmet>
-        <img src={bdBasePath + data.backdrop_path} className="backdrop" />
+        <img src={bdBasePath + data.backdrop_path} className="backdrop" alt="backdrop" />
         <section className="top-section">
-          <img src={posterBasePath + data.poster_path} className="poster" />
+          <img src={posterBasePath + data.poster_path} className="poster" alt="poster" />
           <div className="top-info">
             <h2>
               {data.name} ({data.first_air_date.slice(0, 4)})
             </h2>
             <div className="genres">
               {data.genres.map((gen) => (
-                <Genre id={gen.id} group='tv' />
+                <Genre id={gen.id} group='tv' key={gen.id} />
               ))}
             </div>
             <div className="tagline">"{data.tagline}"</div>
@@ -45,11 +45,12 @@ export default function TVDetails() {
                 <img
                   src={logoBasePath + data.networks[0].logo_path}
                   className="network-logo"
+                  alt="logo"
                 />
               </a>
               <b>Status:</b> {data.status}
             </div>
-            <div>Creators : {data.created_by.map(p=><b style={{marginRight:'48px'}}>{p.name}</b>)}</div>
+            <div>Creators : {data.created_by.map(p=><b style={{marginRight:'48px'}} key={p.id}>{p.name}</b>)}</div>
             <div className="score-trailer">
               <div className="runtime">
                 <AccessTimeIcon />

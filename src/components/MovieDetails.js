@@ -51,7 +51,7 @@ export default function MovieDetails() {
             </h2>
             <div className="genres">
               {data.genres.map((gen) => (
-                <Genre id={gen.id} group="movie" />
+                <Genre id={gen.id} group="movie" key={gen.id} />
               ))}
             </div>
             <div className="tagline">"{data.tagline}"</div>

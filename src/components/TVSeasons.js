@@ -43,14 +43,14 @@ export default function TVSeasons() {
         </div>
         {data.episodes.map((episode) => {
           return (
-            <div className="episode-card">
+            <div className="episode-card" key={episode.id}>
               <img
                 src={
                   episode.still_path
                     ? stillBasePath + episode.still_path
                     : noStill
                 }
-                alt="episode still image"
+                alt="episode still"
               />
               <div className="espidoe-details">
                 <div className="episode-left">

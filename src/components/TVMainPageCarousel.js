@@ -36,7 +36,7 @@ export default function TVMainPageCarousel(props) {
       >
       {isDataAvailable &&
         data.results.map((movie) => {
-          return <SwiperSlide> <TVCard name={movie.name} year={movie.first_air_date.slice(0,4)} overview={movie.overview} rating={movie.vote_average*10} poster={movie.poster_path}
+          return <SwiperSlide key={movie.id}> <TVCard name={movie.name} year={movie.first_air_date.slice(0,4)} overview={movie.overview} rating={movie.vote_average*10} poster={movie.poster_path}
             genre1={movie.genre_ids[0]}
             genre2={movie.genre_ids[1]}
             id={movie.id}

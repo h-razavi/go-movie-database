@@ -21,7 +21,6 @@ export default function GenreSelector({handleGenre, value}) {
     <FormControl
       variant="standard"
       sx={{ m: 1, minWidth: 120, color: "#fff" }}
-      classes={"selector"}
     >
       <InputLabel
         id="genre"
@@ -53,7 +52,7 @@ export default function GenreSelector({handleGenre, value}) {
         {isDataAvailable &&
           data.genres.map((genre) => {
             return (
-            <MenuItem value={genre.id} label={genre.name} >{genre.name}</MenuItem>
+            <MenuItem value={genre.id} label={genre.name} key={genre.id} >{genre.name}</MenuItem>
             
             )
           })}

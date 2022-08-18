@@ -25,7 +25,7 @@ export default function Crew(props) {
         person.job === "Writer"
       ) {
         return (
-          <Link to={`/person/${person.id}`}>
+          <Link to={`/person/${person.id}`} key={person.id}>
           <div className="card-container">
             <img
               src={person.profile_path ?profileBasePath + person.profile_path : noImage  }

@@ -29,14 +29,14 @@ return(isDataAvailable&&
     data.results.map((video)=>{
         if (video.name === 'Main Trailer' || video.name === 'Official Trailer' || video.name === 'Final Trailer' ){
             return (
-                    <>
+                    <div key={video.id}>
                     {modal &&
                     <div className="trailer-wrapper" onClick={toggleModal}><iframe id="trailer" src={'https://www.youtube.com/embed/'+video.key} title={video.name}></iframe></div>
                     }   
-                    <div className="trailer">
+                    <div className="trailer" >
                     <PlayCircleOutlineIcon /><b onClick={toggleModal}>Watch Trailer</b>
                     </div>
-                    </>
+                    </div>
             )
         }
     })
