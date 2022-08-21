@@ -1,5 +1,7 @@
 # GO! Movie Database
 ![preview](/website-screenshot.jpg)
+
+**Live Website:** (https://gomoviedatabase.netlify.app/)
 ---
 ## Overview
 This web app was designed and developed as the final project for the *Junior Frontend Developer* coding bootcamp I attended with [Coding Front](https://codingfront.dev/).
