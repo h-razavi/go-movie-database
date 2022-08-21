@@ -68,11 +68,11 @@ mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
 }
 
 iframe{
-    height: 80vh;
+    height: 90%;
     aspect-ratio: 16/9;
     position: fixed;    
-    top: 10vh;
-    left: 30vh;
+    top: 10%;
+    left: 10%;
     z-index: 9999;
 }
 
@@ -92,7 +92,7 @@ iframe{
     margin-top: -250px;
 }
 
-@media screen and (max-width:810px){
+@media screen and (max-width:820px){
     .top-section{
         flex-direction: column;
         top: -200px;
@@ -110,4 +110,13 @@ iframe{
         margin-top: 0;
         margin-left: 0;
     }
+    iframe{
+        height: 28%;
+    }
+}
+
+@media screen and (max-width:410px) {
+    iframe {
+        height: 17%;
+    }    
 }

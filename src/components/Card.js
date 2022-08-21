@@ -15,17 +15,18 @@ function Card(props) {
         </span>
         <Link to={`/${props.category}/${props.id}`}>
           <div className="img-container">
-            {" "}
             <img
               src={props.poster ? posterBasePath + props.poster : noPoster}
               height="300px"
               width="200px"
+              alt="poster"
             />
             <div className="card-info">
               <h4>Overview</h4>
               <p>{props.overview}</p>
               <div className="genres">
-                <Genre id={props.genre1} group={props.group} /><Genre id={props.genre2} group={props.group} />
+                <Genre id={props.genre1} group={props.group} />
+                <Genre id={props.genre2} group={props.group} />
               </div>
             </div>
           </div>
