@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { posterBasePath } from "../utils/constants/urls";
 import noPoster from "../assets/img/no-poster.png";
 
+
+//This component is used for movies
+
 function Card(props) {
   return (
     <>

@@ -8,10 +8,15 @@ import Genre from "./Genre";
 import convertTime from "../utils/functions/convertTime";
 import Trailer from "./Trailer";
 import { apiKey } from "../utils/constants/api-key";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import Season from "./Season";
-import { baseURL,posterBasePath,bdBasePath,logoBasePath} from "../utils/constants/urls";
-import {CircularProgress,Alert} from '@mui/material';
+import {
+  baseURL,
+  posterBasePath,
+  bdBasePath,
+  logoBasePath,
+} from "../utils/constants/urls";
+import { CircularProgress, Alert } from "@mui/material";
 
 export default function TVDetails() {
   let param = useParams();
@@ -19,24 +24,35 @@ export default function TVDetails() {
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return <CircularProgress />
-  if (error) return <Alert severity="error">{error}</Alert>
-
+  if (loading) return <CircularProgress />;
+  if (error) return <Alert severity="error">{error}</Alert>;
 
   return (
     isDataAvailable && (
       <>
-      <Helmet><title>{data.name} ({data.first_air_date.slice(0, 4)})</title></Helmet>
-        <img src={bdBasePath + data.backdrop_path} className="backdrop" alt="backdrop" />
+        <Helmet>
+          <title>
+            {data.name} ({data.first_air_date.slice(0, 4)})
+          </title>
+        </Helmet>
+        <img
+          src={bdBasePath + data.backdrop_path}
+          className="backdrop"
+          alt="backdrop"
+        />
         <section className="top-section">
-          <img src={posterBasePath + data.poster_path} className="poster" alt="poster" />
+          <img
+            src={posterBasePath + data.poster_path}
+            className="poster"
+            alt="poster"
+          />
           <div className="top-info">
             <h2>
               {data.name} ({data.first_air_date.slice(0, 4)})
             </h2>
             <div className="genres">
               {data.genres.map((gen) => (
-                <Genre id={gen.id} group='tv' key={gen.id} />
+                <Genre id={gen.id} group="tv" key={gen.id} />
               ))}
             </div>
             <div className="tagline">"{data.tagline}"</div>
@@ -50,7 +66,14 @@ export default function TVDetails() {
               </a>
               <b>Status:</b> {data.status}
             </div>
-            <div>Creators : {data.created_by.map(p=><b style={{marginRight:'48px'}} key={p.id}>{p.name}</b>)}</div>
+            <div>
+              Creators :{" "}
+              {data.created_by.map((p) => (
+                <b style={{ marginRight: "48px" }} key={p.id}>
+                  {p.name}
+                </b>
+              ))}
+            </div>
             <div className="score-trailer">
               <div className="runtime">
                 <AccessTimeIcon />
@@ -59,17 +82,19 @@ export default function TVDetails() {
               <div>
                 <b>User Score</b>: {Math.floor(data.vote_average * 10)}%
               </div>
-                <Trailer id={param.id} group={"tv"} />
+              <Trailer id={param.id} group={"tv"} />
             </div>
             <div className="overview">
               <h4>Overview</h4>
               <p>{data.overview}</p>
             </div>
-            <div className='seasons-buttons'><Season num={data.number_of_seasons} id={param.id} /></div>
+            <div className="seasons-buttons">
+              <Season num={data.number_of_seasons} id={param.id} />
+            </div>
           </div>
         </section>
-        <section className='info-section'>
-           <TVInfo id={param.id} /> 
+        <section className="info-section">
+          <TVInfo id={param.id} />
         </section>
       </>
     )

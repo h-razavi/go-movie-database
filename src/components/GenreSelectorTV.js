@@ -5,18 +5,16 @@ import Select from "@mui/material/Select";
 import useFetch from "../utils/helpers/useFetch";
 import { baseURL } from "../utils/constants/urls";
 import { apiKey } from "../utils/constants/api-key";
-import {CircularProgress,Alert} from '@mui/material';
+import { CircularProgress, Alert } from "@mui/material";
 import "../styles/Movies.css";
 
-export default function GenreSelectorTV({handleGenre, value}) {
-  let url = `${baseURL}/genre/tv/list?api_key=${apiKey}`
+export default function GenreSelectorTV({ handleGenre, value }) {
+  let url = `${baseURL}/genre/tv/list?api_key=${apiKey}`;
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return <CircularProgress />
-  if (error) return <Alert severity="error">{error}</Alert>
-
-console.log(value);
+  if (loading) return <CircularProgress />;
+  if (error) return <Alert severity="error">{error}</Alert>;
 
   return (
     <FormControl
@@ -45,18 +43,18 @@ console.log(value);
           },
         }}
         onChange={(e, value) => {
-        handleGenre(e)
+          handleGenre(e);
         }}
         value={value}
-
       >
-        <MenuItem value={''}>Select Genre</MenuItem>
+        <MenuItem value={""}>Select Genre</MenuItem>
         {isDataAvailable &&
           data.genres.map((genre) => {
             return (
-            <MenuItem value={genre.id} label={genre.name} key={genre.id} >{genre.name}</MenuItem>
-            
-            )
+              <MenuItem value={genre.id} label={genre.name} key={genre.id}>
+                {genre.name}
+              </MenuItem>
+            );
           })}
       </Select>
     </FormControl>

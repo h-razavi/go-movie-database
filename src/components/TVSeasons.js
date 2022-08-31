@@ -5,8 +5,12 @@ import convertTime from "../utils/functions/convertTime";
 import { useParams } from "react-router-dom";
 import noPoster from "../assets/img/no-poster.png";
 import noStill from "../assets/img/no-still.png";
-import { baseURL,posterBasePath,stillBasePath } from "../utils/constants/urls";
-import {CircularProgress,Alert} from '@mui/material';
+import {
+  baseURL,
+  posterBasePath,
+  stillBasePath,
+} from "../utils/constants/urls";
+import { CircularProgress, Alert } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function TVSeasons() {
@@ -15,17 +19,16 @@ export default function TVSeasons() {
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return <CircularProgress />
-  if (error) return <Alert severity="error">{error}</Alert>
+  if (loading) return <CircularProgress />;
+  if (error) return <Alert severity="error">{error}</Alert>;
 
-    //Get date
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, "0");
-    var mm = String(today.getMonth() + 1).padStart(2, "0");
-    var yyyy = today.getFullYear();
-  
-    today = yyyy + "-" + mm + "-" + dd;
+  //Get date
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  var mm = String(today.getMonth() + 1).padStart(2, "0");
+  var yyyy = today.getFullYear();
 
+  today = yyyy + "-" + mm + "-" + dd;
 
   return (
     isDataAvailable && (
@@ -69,12 +72,16 @@ export default function TVSeasons() {
                     <span>{Math.floor(episode.vote_average * 10)}%</span>
                   </div>
                 </div>
-                <p>{episode.air_date<today?episode.overview:"To Be Aired"}</p>
+                <p>
+                  {episode.air_date < today ? episode.overview : "To Be Aired"}
+                </p>
               </div>
             </div>
           );
         })}
-        <button className="back-button"><Link to={`/tv/${params.id}`}> &#9668; Go Back </Link></button>
+        <button className="back-button">
+          <Link to={`/tv/${params.id}`}> &#9668; Go Back </Link>
+        </button>
       </div>
     )
   );

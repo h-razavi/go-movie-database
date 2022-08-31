@@ -8,20 +8,20 @@ import { useState } from "react";
 import TVCard from "../components/TVCard";
 import { Helmet } from "react-helmet";
 import { baseURL } from "../utils/constants/urls";
-import {CircularProgress,Alert} from '@mui/material';
+import { CircularProgress, Alert } from "@mui/material";
 import GenreSelectorTV from "../components/GenreSelectorTV";
 
 export default function TV() {
   let [page, setPage] = useState(1);
-  let handleChange = (e, value) => setPage(value);
+  let handleChange = (value) => setPage(value);
 
   let [sort, setSort] = useState("popularity.desc");
-  let handleSort = (e, value) => setSort(e.target.value);
+  let handleSort = (e) => setSort(e.target.value);
 
   let params = useParams();
 
   let [genre, setGenre] = useState(params.genre);
-  let handleGenre = (e, value) => setGenre(e.target.value);
+  let handleGenre = (e) => setGenre(e.target.value);
 
   //Get date
   var today = new Date();
@@ -35,8 +35,8 @@ export default function TV() {
   const { data, loading, error } = useFetch(url);
   let isDataAvailable = !loading && !error && !!data;
 
-  if (loading) return <CircularProgress />
-  if (error) return <Alert severity="error">{error}</Alert>
+  if (loading) return <CircularProgress />;
+  if (error) return <Alert severity="error">{error}</Alert>;
 
   return (
     <>
@@ -92,7 +92,7 @@ export default function TV() {
                   genre1={movie.genre_ids[0]}
                   genre2={movie.genre_ids[1]}
                   id={movie.id}
-                  group='tv'
+                  group="tv"
                   key={movie.id}
                 />
               );

@@ -1,29 +1,28 @@
-.card-container{
-    margin: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.card-container {
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.cast-container img{
-    border-radius: 8px;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.7);
+.cast-container img {
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.7);
 }
 
-.cast-description{
-    text-align: center;
-    padding: 8px;
-    max-width: 200px;
-    background-color: var(--card-background);
-    border-radius: 8px;
+.cast-description {
+  text-align: center;
+  padding: 8px;
+  max-width: 200px;
+  background-color: var(--card-background);
+  border-radius: 8px;
 }
 
-.cast-name{
-    font-size: 1.2rem;
-    font-weight: 700;
+.cast-name {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-.cast-role{
-    color: var(--secondary-text);
+.cast-role {
+  color: var(--secondary-text);
 }
