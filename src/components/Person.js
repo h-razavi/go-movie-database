@@ -24,7 +24,7 @@ export default function Person() {
         </Helmet>
         <div className="container">
           <div className="profile">
-            <img src={profileBasePath + data.profile_path} />
+            <img src={profileBasePath + data.profile_path} alt='profile' />
             <div className="person-info">
               <h2 className="person-name">{data.name}</h2>
               <div>

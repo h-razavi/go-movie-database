@@ -20,6 +20,7 @@ function TVCard(props) {
               src={props.poster ? posterBasePath + props.poster : noPoster}
               height="300px"
               width="200px"
+              alt="poster"
             />
             <div className="card-info">
               <h4>Overview</h4>

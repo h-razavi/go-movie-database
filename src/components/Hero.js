@@ -33,7 +33,7 @@ function Hero() {
         </div>
       </div>
       <div className="hero-right">
-        <img src={logo} height="180px" />
+        <img src={logo} height="180px" alt='logo' />
         <div className="logo-text">
           <span>Go!</span>
           <br /> Movie Database

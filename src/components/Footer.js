@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="tmdb">
         Data Provided by{" "}
         <a href="https://www.themoviedb.org/">
-          <img src={logo} />
+          <img src={logo} alt='logo' />
         </a>
       </div>
       <div className="personal-info">
