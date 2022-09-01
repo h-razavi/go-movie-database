@@ -12,7 +12,7 @@ import { CircularProgress, Alert } from "@mui/material";
 
 export default function SearchResults() {
   let [page, setPage] = useState(1);
-  let handleChange = (value) => setPage(value);
+  let handleChange = (e,value) => setPage(value);
 
   let params = useParams();
 

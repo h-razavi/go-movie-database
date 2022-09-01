@@ -58,4 +58,7 @@
   .description p {
     display: none;
   }
+  .news-card-container img {
+    width: 80%;
+  }
 }
