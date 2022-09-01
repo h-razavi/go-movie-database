@@ -17,7 +17,7 @@ export default function Recommendations(props) {
     data.results.slice(0, 6).map((movie) => {
       return (
         <Card
-          title={movie.title || movie.original_name}
+          title={movie.title || movie.name}
           overview={movie.overview}
           rating={Math.floor(movie.vote_average * 10)}
           poster={movie.poster_path}
