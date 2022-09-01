@@ -13,10 +13,10 @@ import { CircularProgress, Alert } from "@mui/material";
 
 export default function Movies() {
   let [page, setPage] = useState(1);
-  let handleChange = (value) => setPage(value);
+  let handleChange = (e,value) => setPage(value);
 
   let [sort, setSort] = useState("popularity.desc");
-  let handleSort = (e) => setSort(e.target.value);
+  let handleSort = (e,value) => setSort(e.target.value);
 
   let params = useParams();
 
