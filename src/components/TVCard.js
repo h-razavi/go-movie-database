@@ -11,7 +11,6 @@ function TVCard(props) {
     <>
       <CardStyled>
         <span className="card-title">
-          {" "}
           {props.name} {props.year}
         </span>
         <Link to={`/tv/${props.id}`}>
